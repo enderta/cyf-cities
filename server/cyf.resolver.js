@@ -1,6 +1,6 @@
 const cyf= require('./cyf.service.js');
 
-const resolvers = {
+const resolvers = {//resolver helps to use the data from the service
 
     Query: {
         cities: () => cyf.getCities(),//return all cities

@@ -30,12 +30,13 @@ function CityTable({ data, formatDate, handleDelete }) {
       (city.updated_at &&
         city.updated_at.toLowerCase().includes(search.toLowerCase())) ||
       (city.updated_by &&
+        typeof city.updated_by === 'string' &&
         city.updated_by.toLowerCase().includes(search.toLowerCase()))
     ) {
       return city;
     }
   });
-
+  
   function highlightSearchTerm(text, searchTerm) {
     const parts = text.split(new RegExp(`(${searchTerm})`, "gi"));
     return (

@@ -14,7 +14,7 @@ type city{#city type
     updated_at: String #updated_at is a string and it is not required default value is the current date
     updated_by: Int #updated_by is an integer and it is not required
 }
-type Query {
+type Query {#read cities
     cities: [city] #return all cities
     city(id: Int!): city #return city by id
 }
