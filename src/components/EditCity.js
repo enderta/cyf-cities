@@ -76,16 +76,16 @@ function EditCity() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     // Convert updated_by to a number
     const updated_by = Number(city.updated_by);
-  
+
     // Check if updated_by is less than or equal to zero
-    if (updated_by <= 0) {
+    if (updated_by <= 0 || updated_by > 3 || isNaN(updated_by)) {
       alert("Please enter a valid number for updated_by between 1 and 3");
       return; // Exit the function
     }
-  
+
     try {
       // Send the updateCity mutation
       await updateCity({
